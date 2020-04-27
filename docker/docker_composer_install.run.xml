@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="composer:install" type="docker-deploy" factoryName="docker-image"
+                   folderName="docker" server-name="docker">
+        <deployment type="docker-image">
+            <settings>
+                <option name="imageTag" value="composer"/>
+                <option name="command" value="composer install --ignore-platform-reqs --no-scripts"/>
+                <option name="containerName" value="composer"/>
+                <option name="entrypoint" value=""/>
+                <option name="envVars">
+                    <list>
+                        <DockerEnvVarImpl>
+                            <option name="name" value="APP_ENV"/>
+                            <option name="value" value="dev"/>
+                        </DockerEnvVarImpl>
+                    </list>
+                </option>
+                <option name="commandLineOptions" value="-w /app"/>
+                <option name="volumeBindings">
+                    <list>
+                        <DockerVolumeBindingImpl>
+                            <option name="containerPath" value="/app"/>
+                            <option name="hostPath" value="$PROJECT_DIR$"/>
+                        </DockerVolumeBindingImpl>
+                        <DockerVolumeBindingImpl>
+                            <option name="containerPath" value="/root/.ssh"/>
+                            <option name="hostPath" value="$USER_HOME$/.ssh"/>
+                            <option name="readOnly" value="true"/>
+                        </DockerVolumeBindingImpl>
+                        <DockerVolumeBindingImpl>
+                            <option name="containerPath" value="/tmp/cache"/>
+                            <option name="hostPath" value="$USER_HOME$/.composer/cache"/>
+                        </DockerVolumeBindingImpl>
+                    </list>
+                </option>
+            </settings>
+        </deployment>
+        <method v="2"/>
+    </configuration>
+</component>
