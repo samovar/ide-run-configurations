@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="composer:install" type="docker-deploy" factoryName="docker-image"
-                   folderName="docker" server-name="docker">
+                   folderName="docker" server-name="Docker">
         <deployment type="docker-image">
             <settings>
                 <option name="imageTag" value="composer"/>
