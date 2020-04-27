@@ -1,1 +1,3 @@
-# ide-run-configurations
+# IDEA Run Configurations
+
+Copy files to .run
